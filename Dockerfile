@@ -1,5 +1,5 @@
 # build stage
-FROM node:lts-alpine as build-stage
+FROM node:12 as build-stage
 
 LABEL maintainer=guoyanhao@gmail.com
 
@@ -7,8 +7,9 @@ WORKDIR /app
 
 COPY package.json ./
 
-RUN npm install -g npm@8.14.0
+# RUN npm install -g npm@8.14.0
 RUN npm install
+# RUN yarn install
 
 COPY . .
 
