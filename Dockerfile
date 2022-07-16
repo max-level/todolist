@@ -5,8 +5,9 @@ LABEL maintainer=guoyanhao@gmail.com
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json ./
 
+RUN npm install -g npm@8.14.0
 RUN npm install
 
 COPY . .
